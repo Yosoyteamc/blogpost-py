@@ -1,0 +1,148 @@
+html{
+	font-family: 'Roboto', sans-serif;
+	color: #252525;
+	background-color: #fdfdfd;
+}
+
+.content{
+	max-width: 1024px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+.navbar{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+}
+
+.navbar__logo{
+	/* color verde */
+	color: #0d3b66;
+	font-size: 1.75rem;
+	font-weight: 700;
+	text-decoration: none;
+	padding-right: 30px;
+}
+
+.navbar-container{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.navbar-content{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+}
+
+.navbar-content__list{
+	list-style: none;
+}
+
+.navbar-content__item{
+	color: #252525;
+	text-decoration: none;
+	font-size: 0.99rem;
+}
+
+.navbar-content__item--separator{
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.hero{
+	border-radius: 10px;
+	/* color gris claro*/
+	background-color: #f0f0f0;
+	padding: 25px;
+	margin: 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-container__greeting{
+	text-align: center;
+	font-weight: 300;
+	font-size: 0.9rem;
+	letter-spacing: 0.8rem;
+	text-transform: uppercase;
+	padding: 15px;
+}
+
+.hero-container__text{
+	margin: auto;
+	line-height: 2.2rem;
+	color: #252525;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 10px;
+}
+
+.hero-container__text--highlight{
+	color: #0d3b66;
+}
+
+.latest-post{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	gap: 5%;
+	margin-bottom: 25px;
+}
+
+.latest-post__cover{
+	width: 60%;
+	height: 260px;
+}
+
+.latest-post__cover img{
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.latest-post-content{
+	width: 70%;
+	display: flex;
+	flex-direction: column;	
+}
+
+.latest-post__created-at{
+	font-size: 1.2rem;
+}
+
+.latest-post__title{
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 20px 0;
+}
+
+.latest-post__resume{
+	font-size: 1.2rem;
+	font-weight: 300;
+	line-height: 1.5rem;
+}
+
+.latest-post-tags{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding: 20px 0 0;
+}
+
+.latest-post__category{
+	color: #0d3b66;
+	font-weight: 700;
+}

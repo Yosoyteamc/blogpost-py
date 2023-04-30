@@ -4,9 +4,58 @@
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Blog</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<title>Blogged</title>
 </head>
 <body>
+		<header class="content content--column">
+			<nav class="navbar">
+				<div class="navbar-container">
+					<a href="#" class="navbar__logo">Blogged</a>
+					<ul class="navbar-content">
+						<li class="navbar-content__list"><p class="navbar-content__item navbar-content__item--separator" >|</p></li>
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Stories</a></li>
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Creator</a></li>
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Community</a></li>
+					</ul>
+				</div>
+				<div class="navbar-container">
+					<ul class="navbar-content">
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Write</a></li>
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Notifications</a></li>
+						<li class="navbar-content__list"><a class="navbar-content__item" href="#">Profile</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="hero">
+				<div class="hero-container">
+					<p class="hero-container__greeting">welcome to blogged</p>
+					<p class="hero-container__text">Craft narratives ✍️ that ignite <span class="hero-container__text--highlight">inspiration 💡</span>, <br>
+						<span class="hero-container__text--highlight">knowledge 📕</span>, and <span class="hero-container__text--highlight">entertaiment 🎬</span></p>
+				</div>
+			</div>
+		</header>
+	<main class="content">
+		<div class="latest-post">
+			<div class="latest-post__cover">
+				<img src="https://ittutorial.org/wp-content/uploads/2019/11/django.jpg" alt="cover latest post">
+			</div>
+			<div class="latest-post-content">
+				<p class="latest-post__created-at">Hace 1 minuto</p>
+				<h2 class="latest-post__title">Best Way To Get Started With Django</h2>
+				<p class="latest-post__resume">Since Django is a python framework, the first thing to do is to learn python very well. Make sure you are very familiar...</p>
+				<div class="latest-post-tags">
+					<p class="latest-post__read-time"><span class="latest-post__category">Software</span> · 5 minutes read</p>
+				</div>
+			</div>
+		</div>
+	</main>
+
 	<div>
 		{% for post in posts reversed %}
 			<div>
@@ -18,5 +67,6 @@
 			</div>
 		{% endfor %}
 	</div>
+
 </body>
 </html>
