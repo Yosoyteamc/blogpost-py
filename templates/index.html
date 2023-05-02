@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 	<title>Blogged</title>
 </head>
@@ -34,7 +34,7 @@
 			</nav>
 			<div class="hero">
 				<div class="hero-container">
-					<p class="hero-container__greeting">welcome to blogged</p>
+					<h1 class="hero-container__greeting">welcome to blogged</h1>
 					<p class="hero-container__text">Craft narratives ✍️ that ignite <span class="hero-container__text--highlight">inspiration 💡</span>, <br>
 						<span class="hero-container__text--highlight">knowledge 📕</span>, and <span class="hero-container__text--highlight">entertaiment 🎬</span></p>
 				</div>
@@ -47,26 +47,36 @@
 			</div>
 			<div class="latest-post-content">
 				<p class="latest-post__created-at">Hace 1 minuto</p>
-				<h2 class="latest-post__title">Best Way To Get Started With Django</h2>
-				<p class="latest-post__resume">Since Django is a python framework, the first thing to do is to learn python very well. Make sure you are very familiar...</p>
+				<h2 class="latest-post__title">{{ posts.0.title }}</h2>
+				<p class="latest-post__resume">{{ posts.0.body|truncatewords:25}}</p>
 				<div class="latest-post-tags">
 					<p class="latest-post__read-time"><span class="latest-post__category">Software</span> · 5 minutes read</p>
 				</div>
 			</div>
 		</div>
-	</main>
-
-	<div>
-		{% for post in posts reversed %}
-			<div>
-				<a href="post/{{post.id}}">
-					<h1>{{ post.title }}</h1>
-					<span>{{post.created_at}}</span>
-					<p>{{ post.body|truncatewords:20 }}</p>
-				</a>
+		<div class="posts">
+			<div class="posts-title">
+				<h3 class="posts-title__text">Latest posts</h3>
+				<a class="posts-title__more">See all</a>
 			</div>
-		{% endfor %}
-	</div>
-
+			<div class="posts-container">
+				{% for post in posts reversed %}
+				<div class="post">
+					<div class="post-cover">
+						<img src="https://ittutorial.org/wp-content/uploads/2019/11/django.jpg" alt="cover post">
+					</div>
+					<div class="post-content">
+						<span class="post-content__date">{{ post.created_at }}</span>
+						<h4 class="post-content__title">{{ post.title }}</h4>
+						<p class="post-content__body">{{ post.body|truncatewords:20 }}</p>
+						<div class="post-tags">
+							<p class="post-tags__read-time"><span class="post-tags__category">Software</span> · 5 minutes read</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
 </body>
 </html>
